@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LULI - Content</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/content.css">
+</head>
+<body>
+    <!-- 光效层 -->
+    <div class="light-effect"></div>
+    
+    <!-- 返回按钮 -->
+    <a href="index.html" class="back-button">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M15.8333 10H4.16666M4.16666 10L9.16666 15M4.16666 10L9.16666 5" 
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Back</span>
+    </a>
+
+    <!-- 主要内容区域 -->
+    <main class="content-main">
+        <!-- 精选文章区域 -->
+        <section class="featured-section">
+            <h2 class="section-title">精选文章</h2>
+            <div class="swiper featured-swiper">
+                <div class="swiper-wrapper">
+                    <!-- 文章卡片将通过 JavaScript 动态加载 -->
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </section>
+
+        <!-- 文章列表区域 -->
+        <section class="articles-list-section">
+            <h2 class="section-title">所有文章</h2>
+            <div class="articles-list">
+                <div class="article-list-header">
+                    <span class="title-col">标题</span>
+                    <span class="views-col">阅读量</span>
+                    <span class="tags-col">标签</span>
+                    <span class="date-col">发布时间</span>
+                </div>
+                <!-- 文章列表将通过 JavaScript 动态加载 -->
+            </div>
+            <!-- 添加分页器 -->
+            <div class="pagination">
+                <button class="pagination-prev" disabled>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="pagination-numbers"></div>
+                <button class="pagination-next">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/content.js"></script>
+</body>
+</html> 

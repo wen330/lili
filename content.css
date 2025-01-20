@@ -1,0 +1,462 @@
+/* 返回按钮样式 */
+.back-button {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #999999;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0.75rem 1.25rem;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.back-button:hover {
+    color: #FFFFFF;
+    transform: translateX(-4px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* 主要内容区域 */
+.content-main {
+    padding: 6rem 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* 区块标题样式 */
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 2rem;
+    height: 2px;
+    background: var(--accent-primary);
+    border-radius: 1px;
+}
+
+/* 精选文章区域 */
+.featured-section {
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.featured-swiper {
+    overflow: hidden;
+    padding: 1rem;
+    margin: 0 -1rem;
+    user-select: none; /* 防止拖动时选中文本 */
+}
+
+.swiper-slide {
+    width: calc(25% - 24px) !important; /* 强制一行显示4个 */
+    height: 420px !important; /* 固定卡片高度 */
+}
+
+.featured-card {
+    text-decoration: none;
+    color: inherit;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.featured-card:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+}
+
+.featured-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.featured-card:hover img {
+    transform: scale(1.05);
+}
+
+.featured-card-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 确保内容均匀分布 */
+}
+
+.featured-card h3 {
+    color: var(--text-primary);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.featured-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* 文章列表区域 */
+.articles-list {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    min-height: 400px; /* 防止分页切换时页面跳动 */
+}
+
+.article-list-header,
+.article-list-item {
+    display: grid;
+    grid-template-columns: 3fr 1fr 2fr 1fr;
+    padding: 1rem 1.5rem;
+    align-items: center;
+}
+
+.article-list-header {
+    background: rgba(255, 255, 255, 0.02);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.article-list-item {
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.article-list-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.article-list-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--accent-primary);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.article-list-item:hover::before {
+    transform: scaleY(1);
+}
+
+.article-list-item .title {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.article-list-item .title:hover {
+    color: var(--accent-primary);
+}
+
+.article-list-item .views {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.article-list-item .tags {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tag {
+    background: rgba(94, 92, 238, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    color: var(--accent-primary);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background: rgba(94, 92, 238, 0.2);
+}
+
+.article-list-item .date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Swiper 导航按钮样式 */
+.swiper-button-next,
+.swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--accent-primary);
+}
+
+.swiper-button-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* 添加滚动条样式 */
+.swiper-scrollbar {
+    background: rgba(255, 255, 255, 0.05);
+    height: 4px !important;
+    border-radius: 2px;
+    margin-top: 2rem;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.swiper-scrollbar-drag {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    transition: background 0.3s ease;
+    cursor: grab;
+}
+
+.swiper-scrollbar-drag:active {
+    cursor: grabbing;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.featured-section:hover .swiper-scrollbar {
+    opacity: 1;
+}
+
+/* 响应式布局优化 */
+@media (max-width: 1440px) {
+    .swiper-slide {
+        width: calc(33.333% - 20px) !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .swiper-slide {
+        width: calc(50% - 16px) !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .swiper-slide {
+        width: 100% !important;
+    }
+}
+
+/* 添加链接跳转指示器 */
+.featured-card::after {
+    content: '↗';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.featured-card:hover::after {
+    opacity: 1;
+    transform: translate(2px, -2px);
+}
+
+/* 添加加载动画 */
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.swiper-slide {
+    animation: cardFadeIn 0.5s ease forwards;
+    animation-delay: calc(var(--card-index) * 0.1s);
+}
+
+/* 优化文章列表的响应式布局 */
+@media (max-width: 768px) {
+    .content-main {
+        padding: 4rem 1.5rem;
+    }
+
+    .back-button {
+        top: 1rem;
+        left: 1rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .article-list-header,
+    .article-list-item {
+        grid-template-columns: 1fr 80px;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .article-list-item .tags {
+        grid-column: 1 / -1;
+        margin-top: 0.5rem;
+    }
+
+    .views-col,
+    .date-col {
+        display: none;
+    }
+
+    .article-list-item .views,
+    .article-list-item .date {
+        font-size: 0.8rem;
+    }
+}
+
+/* 优化分页器样式 */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.pagination button {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination-numbers {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.pagination-number {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    min-width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.pagination-number.active {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+    color: white;
+}
+
+.pagination-number:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+.pagination-ellipsis {
+    color: var(--text-secondary);
+    padding: 0 0.5rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .pagination {
+        gap: 0.5rem;
+    }
+
+    .pagination button,
+    .pagination-number {
+        width: 36px;
+        height: 36px;
+        font-size: 0.8rem;
+    }
+
+    .pagination-ellipsis {
+        padding: 0 0.25rem;
+    }
+} 
